@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//verificacion del tipo de ano bisiesto
 int calculo(){
     int dato, prueba;
     cout<<"\tIngrese el ano a verificar:";
@@ -19,6 +20,7 @@ int calculo(){
 
 }
 
+//despliegue del menu de opciones
 int opcion(){
     int opcion, eleccion;
 
@@ -35,8 +37,6 @@ int opcion(){
 }
 
 
-
-
 int main(){
     int dato, eleccion;
 
@@ -46,7 +46,7 @@ int main(){
     cout<<"|           CALCULO DE ANO BISIESTO           |"<<endl;
     cout<<"|_____________________________________________|"<<endl<<endl;
 
-
+    //bucle que respite las funciones dependiendo de la eleccion del usuario
     do{
         dato=calculo();
     
@@ -62,6 +62,8 @@ int main(){
 
     }while(eleccion==1);
 
+    /*el getch, permite que nuestro ejecutable no se cierre hasta que el usuario
+     *presione cualquier tecla*/
     getch();
     return 0;
 }

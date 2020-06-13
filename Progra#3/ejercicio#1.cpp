@@ -3,7 +3,7 @@
 
 using namespace std;
 
-
+//calculo del salario total
 float salarioT(){
 
     float htrabajadas, hextras, salariototal;
@@ -20,6 +20,7 @@ float salarioT(){
     return salariototal;  
 }
 
+//calculo del salario menos el impuesto
 float impuestos(float salario){
     float seguro, afp, renta, impuestoP;
     if(salario >= 500){
@@ -35,6 +36,7 @@ float impuestos(float salario){
     return impuestoP;
 }
 
+//despliegue del menu de opciones
 float opcion(){
     float eleccion, opcion;
 
@@ -60,7 +62,7 @@ int main(){
     cout<<"|             Coca-Cola company               |"<<endl;
     cout<<"|_____________________________________________|"<<endl<<endl;
 
-
+    //bucle que respite las funciones dependiendo de la eleccion del usuario
     do{
         salariot = salarioT();
         cout<<"\tEl salario total es: $"<<salariot<<endl;
@@ -73,6 +75,8 @@ int main(){
 
     }while(eleccion == 1);
 
+    /*el getch, permite que nuestro ejecutable no se cierre hasta que el usuario
+     *presione cualquier tecla*/
     getch();
     return 0;
 }
