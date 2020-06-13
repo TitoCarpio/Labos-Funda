@@ -15,14 +15,12 @@ int adivinar(int ns, int inten ){
 
         if(n<ns){
             cout<<"\tEl numero magico es mayor."<<endl;
-            contador++;
             intentos= 5 - contador;
             cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
             cout<<" _____________________________________________"<<endl;
 
         }else if(n>ns){
             cout<<"\tEl numero magico es menor."<<endl;
-            contador++;
             intentos= 5 - contador;
             cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
             cout<<" _____________________________________________"<<endl;
@@ -55,7 +53,7 @@ int opcion(){
 
 int main(){
 
-    int nsecreto = 17, valor, eleccion, contador=0;
+    int nsecreto = 17, valor, eleccion, contador=1;
 
 
 //titulo del programa al iniciarlo.
