@@ -9,29 +9,34 @@ int adivinar(int ns, int inten ){
     int n, contador = inten, intentos;
 
     if(contador <=4){
-        cout<<"\tIngresa un numero: ";
+        cout<<"\tIngresa un numero entre 1-100: ";
         cin>>n;
         cout<<endl;
+        if(n<=100){
+            if(n<ns){
+                cout<<"\tEl numero magico es mayor."<<endl;
+                intentos= 5 - contador;
+                cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
+                cout<<" _____________________________________________"<<endl;
 
-        if(n<ns){
-            cout<<"\tEl numero magico es mayor."<<endl;
-            intentos= 5 - contador;
-            cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
-            cout<<" _____________________________________________"<<endl;
-
-        }else if(n>ns){
-            cout<<"\tEl numero magico es menor."<<endl;
-            intentos= 5 - contador;
-            cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
-            cout<<" _____________________________________________"<<endl;
+            }else if(n>ns){
+                cout<<"\tEl numero magico es menor."<<endl;
+                intentos= 5 - contador;
+                cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
+                cout<<" _____________________________________________"<<endl;
+            }else {
+                cout<<"\tFELICIDADES!!! Lo has adivinado ^-^"<<endl;
+                cout<<" _____________________________________________"<<endl; 
+            }   
+        
         }else {
-            cout<<"\tFELICIDADES!!! Lo has adivinado ^-^"<<endl;
+            cout<<"\tEl numero magico esta entre 1-100."<<endl;
+            intentos= 5 - contador;
+            cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
             cout<<" _____________________________________________"<<endl;
-            
         }
-    }else{
-        cout<<"\tLo siento :( tus intentos se terminaron."<<endl;
-            
+    } else{
+        cout<<"\tLo siento :( tus intentos se terminaron."<<endl;  
     }
 }
 
