@@ -3,11 +3,12 @@
 
 using namespace std;
 
-int adivinar(int ns ){
+//pistas al usuario y muestra intentos restantes
+int adivinar(int ns, int inten ){
 
-    int n, contador = 0, intentos;
+    int n, contador = inten, intentos;
 
-    if(contador < 5){
+    if(contador <=4){
         cout<<"\tIngresa un numero: ";
         cin>>n;
         cout<<endl;
@@ -17,13 +18,17 @@ int adivinar(int ns ){
             contador++;
             intentos= 5 - contador;
             cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
+            cout<<" _____________________________________________"<<endl;
+
         }else if(n>ns){
             cout<<"\tEl numero magico es menor."<<endl;
             contador++;
             intentos= 5 - contador;
             cout<<"\tIntentos restantes: "<<intentos<<endl<<endl;
+            cout<<" _____________________________________________"<<endl;
         }else {
-            cout<<"\tFELICIDADES!!! Has encontrado el numero."<<endl;
+            cout<<"\tFELICIDADES!!! Lo has adivinado ^-^"<<endl;
+            cout<<" _____________________________________________"<<endl;
             
         }
     }else{
@@ -32,6 +37,7 @@ int adivinar(int ns ){
     }
 }
 
+//desplega menu de opciones
 int opcion(){
     int opcion, eleccion;
 
@@ -49,24 +55,24 @@ int opcion(){
 
 int main(){
 
-    int nsecreto = 17, valor, eleccion;
+    int nsecreto = 17, valor, eleccion, contador=0;
 
+
+//titulo del programa al iniciarlo.
     cout<<" _____________________________________________"<<endl;
     cout<<"|              ADIVINA ADIVINADOR             |"<<endl;
     cout<<"|                     ^-^                     |"<<endl;
     cout<<"|_____________________________________________|"<<endl<<endl;
 
+//bucle que repite las funciones hasta que el usuario decida o se le acaben los intentos.
     do{
-
-    valor = adivinar(nsecreto);
-    eleccion = opcion();
-
-
-
-
+        valor = adivinar(nsecreto,contador);
+        eleccion = opcion();
+        contador++;
 
     }while(eleccion == 1);
-
+/*el getch, permite que nuestro ejecutable no se cierre hasta que el usuario
+ *presione cualquier tecla*/
     getch();
     return 0;
 }
