@@ -20,8 +20,10 @@ void nalumnos(int *n){
 void nombres(string array[], int n){
 
     cout<<"\tIngrese los nombres de los alumnos:"<<endl;
+    cout<<" ___________________________________________________"<<endl;
     
     for(int i=0;i<n;i++){
+        cout<<"\t";
         cin>>array[i];
     }
 
@@ -32,8 +34,10 @@ void nombres(string array[], int n){
 void llenadoMatriz( string array[], float matriz[][5], int num ){
 
     for(int i=0;i<num;i++){
-        cout<<"ingrese la notas del alumno "<<array[i]<<":"<<endl;
+        cout<<" ___________________________________________________"<<endl;
+        cout<<"\tIngrese la notas del alumno "<<array[i]<<":"<<endl;
         for(int j=0;j<5;j++){
+            cout<<"\t";
             cin>>matriz[i][j];
         }
     }
@@ -59,13 +63,15 @@ void notafinal(string array[], float matriz[][5], int num){
             auxiliar += matriz[i][j];
         }
 
-        cout<<"\tEl alumno "<<array[i]<<" tuvo una\n";
-            cout<<"\tde: "<<auxiliar<<":";
+        cout<<" ___________________________________________________"<<endl;
+        cout<<"\tEl alumno "<<array[i]<<" tuvo una nota \n";
+            cout<<"\tde "<<auxiliar<<":";
         if(auxiliar <7){
             cout<<"REPROBADO"<<endl;
         }else {
             cout<<"APROBADO"<<endl;
         }
+        auxiliar = 0;
     }
 
 }
@@ -84,10 +90,9 @@ int main(){
     nombres(nombre,num);
     llenadoMatriz(nombre,notas,num);
     calculodenota(notas,num);
-    // notafinal(nombre,notas,num);
+    notafinal(nombre,notas,num);
     
-    cout<<notas[0][3];
-
+    
 
     getch();
     return 0;
