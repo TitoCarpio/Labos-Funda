@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// Despliega el titulo del programa
+
 void nombre(){
     cout<<endl;
     cout<<" _________________________________________________"<<endl;
@@ -10,6 +12,8 @@ void nombre(){
     cout<<"|              PROMEDIO DE ESTATURAS.             |"<<endl;
     cout<<"|_________________________________________________|"<<endl<<endl;
 }
+
+// Funcion con la que se llena el arreglo con las estaturas
 void llenado(float array[]){
     cout<<"\tIngrese las estaturas de los alumnos"<<endl;
     for(int i=0; i<25;i++){
@@ -20,6 +24,7 @@ void llenado(float array[]){
 
 }
 
+// Funcion que realiza el calculo de la media o promedio
 float media(float array[]){
     float auxiliar = 0, prom;
 
@@ -31,6 +36,8 @@ float media(float array[]){
     return prom;
 }
 
+/* Funcion que realiza el conteo de cuantos valores se encuentras bajo de la media
+ * y por encima de la media*/
 float conteo(float array[], float prom){
     float contador=0;
     for(int i=0;i<25;i++){
@@ -43,12 +50,14 @@ float conteo(float array[], float prom){
     return contador;
 }
 
+// Funcion que despliega el resulado del codigo en pantalla
 void imprimir(int cont){
     cout<<"\tHay "<<cont <<" estaturas\n ";
     cout<<"\tpor debajo de la media."<<endl<<endl;
     cout<<"\tHay "<<25-cont<<" estaturas \n";
     cout<<"\tpor encima de la media."<<endl<<endl;
 }
+
 
 int main(){
 
