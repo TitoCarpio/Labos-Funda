@@ -102,6 +102,7 @@ int main(){
     factura(lista, n);
     costoT = costoTotal(lista, n);
 
+    // con este formato se manda a imprimir la variable que contiene el costo total a pagar
     cout<<"______________________________________________________________________"<<endl;
     cout<<"|Costo Total";
     cout<<"\t\t\t\t\t\t\t$"<<costoT<<"|";
