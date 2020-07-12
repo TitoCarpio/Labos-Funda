@@ -68,7 +68,7 @@ void factura(costoPorArticulo array[], int n){
     cout<<"|                              FACTURA                              |"<<endl;
     cout<<"|___________________________________________________________________|"<<endl;
     cout<<"Producto      Cant                 Precio/U            Precio Total"<<endl;
-    cout<<"____________________________________________________________________"<<endl;
+    cout<<"_____________________________________________________________________"<<endl;
     while(i<n){
         cout<<array[i].nombreArticulo;
         cout<<"\t\t"<<array[i].cantidad;
@@ -80,29 +80,32 @@ void factura(costoPorArticulo array[], int n){
 }
 
 // funcion que calcula el precio total que debera pagar el cliente por su compra
-void costoTotal(costoPorArticulo array[], int n){
+float costoTotal(costoPorArticulo array[], int n){
     int i=0;
     float costo;
     while(i<n){
         costo += array[i].costoPorArticulo;
         i++;
     }
-    cout<<"_____________________________________________________________________"<<endl;
-    cout<<"|Costo Total";
-    cout<<"\t\t\t\t\t\t\t$"<<costo<<"|";
-    cout<<endl<<endl;
+    return costo;
 }
 
 int main(){
     Titulo();
     int n;
+    float costoT;
     n = cantidad();
     costoPorArticulo lista [n];
 
     lecturaDeDatos(lista , n);
     costoArticulo(lista ,n);
     factura(lista, n);
-    costoTotal(lista, n);
+    costoT = costoTotal(lista, n);
+
+    cout<<"______________________________________________________________________"<<endl;
+    cout<<"|Costo Total";
+    cout<<"\t\t\t\t\t\t\t$"<<costoT<<"|";
+    cout<<endl<<endl;
 
     getch();
     return 0;
